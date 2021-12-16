@@ -30,4 +30,10 @@ router.post("/admin/cadastro/save",(req,res)=>{
     }
 })
 
+router.get("/admin/usuarios",(req,res)=>{
+    Users.findAll().then(Users => {
+        res.render("admin/cadastro/users", {Users: Users})
+    })
+})
+
 module.exports = router;
